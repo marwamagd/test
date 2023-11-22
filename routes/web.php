@@ -48,3 +48,10 @@ Route::get('addcar',[Carcontroller::class, 'store']);
 Route::post('store-data',[NewsController::class, 'store'])->name('store-data');
 
 Route::get('News',[NewsController::class,'create']);
+
+
+Route::get('addcar',[Carcontroller::class, 'store']);
+
+Route::post('store-data',[NewsController::class, 'store'])->name('store-data');
+
+Route::get('News',[NewsController::class,'index']);
