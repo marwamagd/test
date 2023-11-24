@@ -12,11 +12,11 @@
 
 <div class="container">
   <h2>AddCar</h2>
-  <form action="{{url('Addcar')}}" method="post">
+  <form action="{{route('store-data')}}" method="post">
     @csrf
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+      <input type="text" class="form-control" id="title" placeholder="Enter title" name="carTitle">
     </div>
     <div class="form-group">
       <label for="price">Price:</label>
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="description">Description:</label>
-        <textarea class="form-control" name="Description" rows="5" id="description"></textarea>
+        <textarea class="form-control"  rows="5" id="description" name="description"></textarea>
       </div> 
     <div class="checkbox">
       <label><input type="checkbox" name="published"> Published</label>

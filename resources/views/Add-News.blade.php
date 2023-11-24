@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>News</title>
+  <title>Add News</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,28 +11,27 @@
 <body>
 
 <div class="container">
-  <h2>News</h2>
+  <h2>Add News</h2>
   <form action="{{route('store-data')}}" method="post">
-    @csrf
+  @csrf
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+      <input type="text" class="form-control" id="title" placeholder="Enter title" name="NewsTitle">
     </div>
     <div class="form-group">
-      <label for="content">Content:</label>
-      <input type="text" class="form-control" id="content" placeholder="Enter content" name="content">
-    </div>
+        <label for="content">Content:</label>
+        <textarea class="form-control" name="content" rows="5" id="content"></textarea>
+      </div>    
     <div class="form-group">
-        <label for="author">Author:</label>
-        <textarea class="form-control" name="author" rows="5" id="author"></textarea>
-      </div> 
+      <label for="author">Author:</label>
+      <input type="text" class="form-control" id="author" placeholder="Enter author name" name="Author">
+    </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="published"> published</label>
+      <label><input type="checkbox" name="published"> Published</label>
     </div>
-    <button type="submit" class="btn btn-default">Add</button>
+    <button type="submit" class="btn btn-default">Add News</button>
   </form>
 </div>
 
 </body>
 </html>
-

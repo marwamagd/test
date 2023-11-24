@@ -12,7 +12,9 @@ class Carcontroller extends Controller
      */
     public function index()
     {
-        //
+        $cars= Car ::get();
+        return view('car' , compact('cars'));
+
     }
 
     /**
@@ -20,7 +22,7 @@ class Carcontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('AddCar');
     }
 
     /**
@@ -28,13 +30,17 @@ class Carcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $cars= new Car();
-        $cars->carTitle = "BMW";
-        $cars->description = "My Description is here";
-        $cars->published = true;
-        $cars->save();
+        $cars = new Car;
+        $cars->carTitle = $request->carTitle;
+        $cars->description = $request->description;
+        if(isset($request->published)){
+            $cars->published = true;
+        }else{
+            $cars->published = false;
+        }
         
-        return 'Car data Added Successfully';   
+        return "Car data added successfully";  
+        $cars->save();
      }
 
     /**
@@ -50,13 +56,13 @@ class Carcontroller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return "the car's id is:".$id;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(string $id)
     {
         //
     }
