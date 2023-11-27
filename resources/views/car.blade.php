@@ -20,6 +20,9 @@
         <th>Content</th>
         <th>Published</th>
         <th>Edite</th>
+        <th>Show</th>
+        <th>Delete</th>
+
 
       </tr>
     </thead>
@@ -34,8 +37,13 @@
         <td > No</td>
 
         @endif     
-     </tr>
+     
         <td><a href="editCar/{{$car->id}}">Edit</a></td>
+        <td><a href="Details-cars/{{$car->id}}">Show</a></td>
+        <td><a href="DeleteCar/{{$car->id}}">Delete</a></td>
+
+        </tr>
+
 @endforeach
     </tbody>
   </table>

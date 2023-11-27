@@ -12,23 +12,24 @@
 
 <div class="container">
   <h2>Add News</h2>
-  <form action="{{route('store-data')}}" method="post">
-  @csrf
+  <form action="{{ route('addNews') }}" method="post">
+    @csrf
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="title" placeholder="Enter title" name="NewsTitle">
+      <input type="text" class="form-control" id="title" placeholder="Enter NewsTitle" name="title">
     </div>
     <div class="form-group">
-        <label for="content">Content:</label>
-        <textarea class="form-control" name="content" rows="5" id="content"></textarea>
-      </div>    
+      <label for="content">Content:</label>
+      <textarea class="form-control" id="content" placeholder="Enter content" name="content"> </textarea>
+    </div>
     <div class="form-group">
       <label for="author">Author:</label>
-      <input type="text" class="form-control" id="author" placeholder="Enter author name" name="Author">
+      <input type="text" class="form-control" id="author" placeholder="Enter author name " name="author">
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="published"> Published</label>
+      <label><input type="checkbox" name="published"> Published </label>
     </div>
+    
     <button type="submit" class="btn btn-default">Add News</button>
   </form>
 </div>
