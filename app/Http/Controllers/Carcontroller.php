@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Car;
 
@@ -81,10 +81,34 @@ class Carcontroller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         Car::where('id', $id)->delete();
-        return "deleted";
+        return redirect ('showcars');
      
     }
+
+    public function trashed ()
+    {
+        $cars = Car::onlyTrashed() ->get ();
+        return View ('TrashedCar', compact ('cars'));
+     
+    }
+    public function restore(String $id):RedirectResponse
+    {
+        Car::where('id',$id)->restore();
+        return redirect('showcars');
+    }
+    // delete force 
+
+    public function delete(string $id) : RedirectResponse
+    {
+        Car::where('id',$id)->forceDelete();
+        Car::where('id', $id)->delete();
+        return redirect ('showcars');
+     
+    }
+
+     
 }
+

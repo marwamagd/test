@@ -19,9 +19,11 @@
         <th>Title</th>
         <th>Content</th>
         <th>Published</th>
-        <th>Edite</th>
-        <th>Show</th>
-        <th>Delete</th>
+        <th>restore</th>
+        <th>Delete Force</th>
+
+         
+         
 
 
       </tr>
@@ -37,10 +39,11 @@
         <td > No</td>
 
         @endif     
-     
-        <td><a href="editCar/{{$car->id}}">Edit</a></td>
-        <td><a href="Details-cars/{{$car->id}}">Show</a></td>
-        <td><a href="DeleteCar/{{$car->id}}">Delete</a></td>
+        <td><a href="restoreCar/{{$car->id}}">Restore</a></td>
+        <td><a href="DeleteForce/{{$car->id}}">Delete Force</a></td>
+
+
+          
 
         </tr>
 

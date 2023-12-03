@@ -58,6 +58,11 @@ Route::get('editCar/{id}', [Carcontroller::class, 'edit']);
  
 Route::get('Details-cars/{id}',[Carcontroller::class,'show'])->name('Details-cars');
 Route::get('DeleteCar/{id}',[Carcontroller::class,'destroy'])->name('DeleteCar');
+Route::get('trashedCar', [Carcontroller::class, 'trashed']);
+Route::get('restoreCar/{id}', [Carcontroller::class, 'restore']);
+
+// force delete 
+Route::get('DeleteForce/{id}',[Carcontroller::class,'destroy'])->name('DeleteForce');
 
 
 //news
@@ -70,5 +75,9 @@ Route::get('Add-News',[NewsController::class, 'create']);
 Route::get('Details-News/{News_id}',[NewsController::class,'show'])->name('Details-News');
 Route::get('Delete-News/{News_id}',[NewsController::class,'destroy'])->name('Delete-News');
 Route::post('addNews', [NewsController::class, 'store'])->name('addNews');   
+Route::get('trashedNews', [NewsController::class, 'trashed']);
+Route::get('restoreNews/{id}', [NewsController::class, 'restore']);
+Route::get('DeleteForce/{id}',[NewsController::class,'destroy'])->name('DeleteForce');
+
 
  

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\News;
 
@@ -83,12 +83,32 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         News::where('id', $id)->delete();
-        return "deleted";
-     
+        return redirect ('Show-News');     
     
         }
+
+        public function delete(string $id) :RedirectResponse
+       {
+        News:: where ('id', $id)->forceDelete();
+        News:: where ('id',$id)-›delete (); 
+        return redirect ('Show-News');
     }
+
+    public function trashed (){
+
+        $news = News::onlyTrashed-›get ();
+        return view (('TrashedNews'), compact ('news'));
+    }
+
+        public function restore(String $id) :RedirectResponse
+        {
+        News::where ('id',$id)-›restore(); 
+        return redirect ('Show-News');
+        }
+    }  
+    
+
 
