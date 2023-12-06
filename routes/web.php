@@ -78,6 +78,7 @@ Route::post('addNews', [NewsController::class, 'store'])->name('addNews');
 Route::get('trashedNews', [NewsController::class, 'trashed']);
 Route::get('restoreNews/{id}', [NewsController::class, 'restore']);
 Route::get('DeleteForce/{id}',[NewsController::class,'destroy'])->name('DeleteForce');
+Route::get('showUpload',[NewsController::class, 'showUpload']);
 
 
  

@@ -30,7 +30,7 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $new= new News();
+        /*$new= new News();
         $new->NewsTitle = $request->title;
         $new->Content = $request->content; 
         $new->Author = $request->author;
@@ -42,8 +42,20 @@ class NewsController extends Controller
             $new->published =0;
         }  
         $new->save();
-        return 'News data Added Successfully';   
+        return 'News data Added Successfully';   */
+        $messages=[
+           'NewsTitle.require'=> 'Done',
+           'description.require'=>'shoold be text',
+        ];
+       $data= $request->validate([
+           'NewsTitle'=>'required|string',
+           'description'=>'required|string',
+       ], $messages);
+       $data['published']= isset($request['published'])? 1 : 0 ;
+       News::create($data);
+       return 'Done';
      }
+     
 
     /**
      * Display the specified resource.
