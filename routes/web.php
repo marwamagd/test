@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Carcontroller;
+use App\Http\Controllers\PlacesController;
+
 
 
 /*
@@ -64,6 +66,10 @@ Route::get('restoreCar/{id}', [Carcontroller::class, 'restore']);
 // force delete 
 Route::get('DeleteForce/{id}',[Carcontroller::class,'destroy'])->name('DeleteForce');
 
+Route::get('showUploadCar',[CarController::class,'showUpload']);
+
+Route::post('uploadCar', [CarController::class, 'upload'])->name('upload');   
+
 
 //news
 Route::get('News',[NewsController::class,'create']);
@@ -81,4 +87,11 @@ Route::get('DeleteForce/{id}',[NewsController::class,'destroy'])->name('DeleteFo
 Route::get('showUpload',[NewsController::class, 'showUpload']);
 
 
+ 
+
+
+
+Route::get('/addPLace', [PlacesController::class, 'create']);
+Route::post('/explore', [PlacesController::class, 'store']);
+Route::get('/place', [PlacesController::class, 'index']);  
  

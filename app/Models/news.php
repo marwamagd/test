@@ -12,6 +12,7 @@ class news extends Model
 'title',
 'Author',
 'Content',
+'image',
 'published',
 ];
 }
