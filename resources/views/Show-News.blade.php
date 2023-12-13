@@ -21,6 +21,8 @@
         <th>Author</th>
         <th>Published</th>
         <th>Edite</th>
+        <th>Show</th>
+        <th>Delete</th>
 
       </tr>
     </thead>
@@ -37,6 +39,8 @@
 
         @endif  
         <td><a href="edit-News/{{$new->id}}">Edit</a></td>
+        <td><a href="Details-News/{{$new->id}}">show</a></td>
+        <td><a href="Delete-News/{{$new->id}}">Delete</a></td>
      </tr>
         
 @endforeach

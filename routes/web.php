@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Carcontroller;
+use App\Http\Controllers\PlacesController;
+
 
 
 /*
@@ -45,15 +47,51 @@ Route::get('test1',[ExampleController::class, 'test1']);
 
 /*Route::post('cardata',[ExampleController::class, 'cardata']);*/
 
-Route::get('addcar',[Carcontroller::class, 'create']);
 
-Route::get('showcars',[Carcontroller::class,'index']);
-Route::post('store-data',[Carcontroller::class, 'store'])->name('store-data');
-Route::get('editcar/{id}',[Carcontroller::class,'edit'])->name('editcar');
 
+//car
+
+Route::get('AddCar', [Carcontroller::class, 'create']);
+Route::post('receive', [Carcontroller::class, 'store'])->name('receive');
+Route::get('showcars', [Carcontroller::class, 'index']);
+
+Route::put('updateCar/{id}', [Carcontroller::class, 'update'])->name('updateCar');
+Route::get('editCar/{id}', [Carcontroller::class, 'edit']);
+ 
+Route::get('Details-cars/{id}',[Carcontroller::class,'show'])->name('Details-cars');
+Route::get('DeleteCar/{id}',[Carcontroller::class,'destroy'])->name('DeleteCar');
+Route::get('trashedCar', [Carcontroller::class, 'trashed']);
+Route::get('restoreCar/{id}', [Carcontroller::class, 'restore']);
+
+// force delete 
+Route::get('DeleteForce/{id}',[Carcontroller::class,'destroy'])->name('DeleteForce');
+
+Route::get('showUploadCar',[CarController::class,'showUpload']);
+
+Route::post('uploadCar', [CarController::class, 'upload'])->name('upload');   
+
+
+//news
 Route::get('News',[NewsController::class,'create']);
 Route::post('store-data',[NewsController::class, 'store'])->name('store-data');
 Route::get('edit-News/{News_id}',[NewsController::class,'edit']);
 Route::put('update-News/{News_id}',[NewsController::class,'update'])->name('update-News');
 Route::get('Show-News',[NewsController::class,'index']);
 Route::get('Add-News',[NewsController::class, 'create']);
+Route::get('Details-News/{News_id}',[NewsController::class,'show'])->name('Details-News');
+Route::get('Delete-News/{News_id}',[NewsController::class,'destroy'])->name('Delete-News');
+Route::post('addNews', [NewsController::class, 'store'])->name('addNews');   
+Route::get('trashedNews', [NewsController::class, 'trashed']);
+Route::get('restoreNews/{id}', [NewsController::class, 'restore']);
+Route::get('DeleteForce/{id}',[NewsController::class,'destroy'])->name('DeleteForce');
+Route::get('showUpload',[NewsController::class, 'showUpload']);
+
+
+ 
+
+
+
+Route::get('/addPLace', [PlacesController::class, 'create']);
+Route::post('/explore', [PlacesController::class, 'store']);
+Route::get('/place', [PlacesController::class, 'index']);  
+ 
