@@ -44,6 +44,13 @@
             {{ $message }}
         @enderror
     </div>
+    <select name="category_id" id="">
+          <option value="">Select Category</option>
+          @foreach($categories as $category)
+          <option value="{{$category->id}}">{{$category->categoryName}}</option>
+         @endforeach
+        </select>
+      </div>
     <div class="checkbox">
       <label><input type="checkbox" name="published"> Published </label>
     </div>

@@ -23,6 +23,15 @@
         <label for="description">Description:</label>
         <textarea class="form-control" rows="5" id="description" name="description" >{{$cars->description}}</textarea>
     </div> 
+    <select name="category_id" id="category_id">
+      <option value="">Select Category</option>
+      @foreach($categories as $category)
+          <option value="{{$category->id}}" @if($category->id == $car->category_id) selected @endif>
+              {{$category->categoryName}}
+          </option>
+      @endforeach
+  </select>
+  
     <div class="checkbox">
       <label><input type="checkbox" name="published" @checked($cars->published)> Published </label>
     </div>

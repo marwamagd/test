@@ -26,7 +26,9 @@ class Carcontroller extends Controller
      */
     public function create()
     {
-        return view('AddCar');
+        
+        $categories =Category::select('id','categoryName')->get();
+       return view('AddCar',compact('categories'));
     }
 
     /**
@@ -43,6 +45,8 @@ class Carcontroller extends Controller
             'carTitle'=>'required|string',
             'description'=>'required|string',
             'image' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'category_id' => 'required|exists:categories,id',
+
         ], $messages);
         
        
@@ -50,6 +54,8 @@ class Carcontroller extends Controller
         $fileName = $this->uploadFile($request->image, 'assets/images');
         $data['image']= $fileName;
          $data['published'] = isset($data['published'])? true : false;
+         $data['category_id'] = $request->input('category_id');
+
         Car:: create($data);
         return 'done' ;
     }
@@ -70,8 +76,13 @@ class Carcontroller extends Controller
      */
     public function edit(string $id)
     {
-        $cars = Car::findOrFail(  $id);
-        return view('update-car',compact('cars'));
+        
+            $car = Car::findOrFail($id);
+           $categories = Category::select('id', 'categoryName')->get();
+    
+        return view('update-car', compact('cars', 'categories'));
+        
+    
     }
 
     /**
@@ -82,7 +93,9 @@ class Carcontroller extends Controller
         $data = $request->validate([
             'carTitle' => 'required|string',
             'description' => 'required|string',
-            'image' => 'nullable|mimes:png,jpg,jpeg|max:2048'
+            'image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
+            'category_id' => 'required|exists:categories,id',
+
              
         ]);
      

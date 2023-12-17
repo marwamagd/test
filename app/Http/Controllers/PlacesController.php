@@ -1,25 +1,25 @@
 <?php
 
-
-
 namespace App\Http\Controllers;
-use App\Traits\Common;
 use App\Models\Explore;
+use App\Traits\Common;
 
 use Illuminate\Http\Request;
 
 class PlacesController extends Controller
 {
-    use Common;
+use common;    
     public function index()
     {
-        $exploreItems =Explore::get();
-        return view('place', compact('exploreItems'));
+        $explores = Explore::all();
+        return view('place',compact('explores'));
     }
+
     public function create()
     {
         return view('add-place-form');
     }
+
 
     public function store(Request $request)
     {
@@ -33,7 +33,7 @@ class PlacesController extends Controller
 
         $fileName = $this->uploadFile($request->file('image'), 'assets/images/places');
         
-        $exploreItem = Explore::create([
+        $explores = Explore ::create([
             'image' => $fileName,
             'title' => $request->input('title'),
             'rating' => $request->input('rating'),
@@ -42,6 +42,6 @@ class PlacesController extends Controller
             'is_featured' => $request->has('is_featured'),
         ]);
 
-       return('data added successfuly');
-     } //
+       return('Data Added  ');
+     }
 }

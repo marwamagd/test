@@ -90,7 +90,7 @@ Route::get('showUpload',[NewsController::class, 'showUpload']);
  
 
 
-
+//places
 Route::get('/addPLace', [PlacesController::class, 'create']);
 Route::post('/explore', [PlacesController::class, 'store']);
 Route::get('/place', [PlacesController::class, 'index']);  
