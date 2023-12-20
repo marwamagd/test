@@ -80,11 +80,11 @@
 				</div><!--/.section-header-->
 				<div class="explore-content">
 					<div class="row">
-						@foreach($explores as $explores)
+						@foreach($exploreItems as $exploreItem)
 							<div class="col-md-4 col-sm-6">
 								<div class="single-explore-item">
 									<div class="single-explore-img">
-										<img src="{{ url('assets/images/places/' . $explores->image) }}" alt="explore image">
+										<img src="{{ url('assets/images/places/' . $exploreItem->image) }}" alt="explore image">
 										<div class="single-explore-img-info">
 											<button onclick="window.location.href='#'">best rated</button>
 											<div class="single-explore-image-icon-box">
@@ -104,15 +104,15 @@
 										</div>
 									</div>
 									<div class="single-explore-txt bg-theme-1">
-										<h2><a href="#">{{ $explores->title }}</a></h2>
+										<h2><a href="#">{{ $exploreItem->title }}</a></h2>
 										<p class="explore-rating-price">
-											<span class="explore-rating">{{ $explores->rating }}</span>
-											<a href="#"> {{ $explores->rating }} ratings</a> 
+											<span class="explore-rating">{{ $exploreItem->rating }}</span>
+											<a href="#"> {{ $exploreItem->rating }} ratings</a> 
 											<span class="explore-price-box">
 												from
-												<span class="explore-price">${{ $explores->price }}</span>
+												<span class="explore-price">${{ $exploreItem->price }}</span>
 											</span>
-											<a href="#"> {{ $explores->description }}</a>
+											<a href="#"> {{ $exploreItem->description }}</a>
 										</p>
 										<!-- Other details and buttons as needed -->
 									</div>

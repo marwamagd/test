@@ -17,7 +17,7 @@ return [
         resource_path('views'),
     ],
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | Compiled View Path
     |--------------------------------------------------------------------------
@@ -32,6 +32,5 @@ return [
         'VIEW_COMPILED_PATH',
         realpath(storage_path('framework/views'))
     ),
-];
 
-   
+];

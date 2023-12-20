@@ -11,39 +11,44 @@
 <body>
 
 <div class="container">
-  <h2>News</h2>
-  <p>The .table-hover class enables a hover state on table rows:</p>            
+  <h2> Deleted News </h2>
+              
   <table class="table table-hover">
     <thead>
       <tr>
         <th>Title</th>
         <th>Content</th>
+        <th>Author</th>
         <th>Published</th>
-        <th>Restore</th>
-        <th>Force Delete</th>
+         <th>Restore</th>
+         <th>force Delete</th>
+
 
       </tr>
     </thead>
-<tbody>
-@foreach($News as $new)
+    <tbody>
+@foreach($news as $newss)
       <tr>
-      <td>{{$new->Title}}</td>
-      <td>{{$new->Content}}</td>
-      <td>{{$new->Author}}</td>
+        <td>{{$newss->Title}}</td>
+        <td>{{$newss->content}}</td>
+        <td>{{$newss->author}}</td>
 
-      @if( $new->published=== 1)
+        @if( $newss->published=== 1)
         <td > Yes</td>
         @else
-        <td > No</td>
+        <td > No
+        @endif
+      </td>    
+        <td><a href="restoreNews/{{$newss->id}}">Restore</a></td>
+        <td><a href="deleteNews/{{$newss->id}}">force Delete</a></td>
 
-        @endif     
-     
-        <td><a href="/{{$new->id}}">restore</a></td>
-         
+    
 
-        </tr>
 
+
+       </tr>
 @endforeach
+       
     </tbody>
   </table>
 </div>

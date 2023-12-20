@@ -24,5 +24,6 @@ class CarFactory extends Factory
             'image' => fake()->imageUrl(800,600),
             'category_id' => fake()->numberBetween($min = 1, $max = 2),
         ];
+         
     }
 }
