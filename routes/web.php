@@ -120,6 +120,7 @@ Route::get('test1',[ExampleController::class,'test1']);
 Route::get('blog',[ExampleController::class,'blog']);
 Route::get('blog1',[ExampleController::class,'blog1']);
 
+<<<<<<< HEAD
 Route::get('/session',[ExampleController::class,'mySession']);
 
 
@@ -138,6 +139,16 @@ Route::group([
 
 Route::post('receive', [CarController::class, 'store'])->name('receive');
 Route::get('showcars', [CarController::class, 'index'])->middleware('verified');
+=======
+
+
+// add car
+Route::get('addCar', [CarController::class, 'storeCarData']);
+Route::get('AddCar', [CarController::class, 'create']);
+
+Route::post('receive', [CarController::class, 'store'])->name('receive');
+Route::get('showcars', [CarController::class, 'index']);
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
 
 //edit car form 
 Route::get('editCar/{id}', [CarController::class, 'edit']);
@@ -219,6 +230,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  
 Route::get('/contact', [ContcatUsController::class, 'create']);
 
+<<<<<<< HEAD
 Route::post('/send',[ContcatUsController::class, 'sendEmail'])->name('SendEmail');
 
 // Example route in web.php
@@ -229,3 +241,6 @@ Route::group(['middleware' => 'auth.car'], function () {
     Route::put('cars/{id}', 'CarController@update');
     Route::delete('cars/{id}', 'CarController@destroy');
 });
+=======
+Route::post('/send',[ContcatUsController::class, 'sendEmail'])->name('SendEmail');
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458

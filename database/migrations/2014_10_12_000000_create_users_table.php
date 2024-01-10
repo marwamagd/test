@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+<<<<<<< HEAD
             $table->string('mobile',20);
             $table->boolen('expired');
 
+=======
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
             $table->rememberToken();
             $table->timestamps();
         });

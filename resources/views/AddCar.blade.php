@@ -12,28 +12,11 @@
 
 <div class="container">
   <h2>Add Car</h2>
-<<<<<<< HEAD
-  <div class="text-center">
-    <hr>
-    <a href="{{ LaravelLocalization::getLocalizedURL('en') }}" class="btn" style="width: 150px; color:#fff;background-color: #8f8b8b">{{__('addCar.english')}}</a>
-    <a href="{{ LaravelLocalization::getLocalizedURL('ar') }}" style="width: 150px; color:#fff;background-color: #8f8b8b" class="btn">{{__('addCar.arabic')}}</a>
-    <hr>
-</div>
-  <form action="{{ route('receive') }}" method="post" enctype="multipart/form-data">
-    @csrf
-    <div class="form-group">
-     <label for="title">Title:</label>
-      <input  type="text" class="form-control" id="title" placeholder="Enter title" name="carTitle"  value="{{ old('carTitle') }}" >
-
-      <label for="title">{{__('addCar.carTitleLabel')}}</label>
-      <input type="text" class="form-control" id="carTitle" placeholder="{{__('addCar.carTitlePlaceholder')}}" name="carTitle" value="{{old('carTitle')}}">
-=======
   <form action="{{ route('receive') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" id="title" placeholder="Enter title" name="carTitle"  value="{{ old('carTitle') }}" >
->>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
       @error('carTitle')
       <div class="alert alert-warning">
           {{ $message }}
@@ -47,11 +30,6 @@
     </div> --}}
     <div class="form-group">
         <label for="description">Description:</label>
-<<<<<<< HEAD
-        <label for="description">{{__('addCar.descriptionLabel')}}</label>
-
-=======
->>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
         <textarea class="form-control" rows="5" id="description" name="description"  value="{{ old('description') }}"></textarea>
         @error('description')
         <div class="alert alert-warning">
@@ -61,48 +39,22 @@
       </div> 
       <div class="form-group">
         <label for="image">Image:</label>
-<<<<<<< HEAD
-        <label for="image">{{__('addCar.imageTitle')}}</label>
-=======
->>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
         <input type="file" class="form-control" id="image" name="image" value="{{ old('image') }}">
         @error('image')
             {{ $message }}
         @enderror
     </div>
-
-    <div class="form-group">
-<<<<<<< HEAD
-      <label for="category">Category:</label>
-            <label for="category">{{__('addCar.categoryLabel')}}</label>
-      <select name="category_id" id="">
+    <select name="category_id" id="">
           <option value="">Select Category</option>
-          <option value="">{{__('addCar.categorySelect')}}</option>
-=======
-      <label for="shortDescription">Short Description:</label>
-      
-      <select name="category_id" id="">
-          <option value="">Select Category</option>
->>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
           @foreach($categories as $category)
           <option value="{{$category->id}}">{{$category->categoryName}}</option>
          @endforeach
         </select>
       </div>
-          <div class="checkbox">
+    <div class="checkbox">
       <label><input type="checkbox" name="published"> Published </label>
-<<<<<<< HEAD
-      <div class="form-group">
-        <label> <input type="checkbox" name="published"> {{__('addCar.publishedTitle')}}</label>
-    </div>
     </div>
     <button type="submit" class="btn btn-default">Add</button>
-    <button type="submit" class="btn btn-default">{{__('addCar.button')}}</button>
-
-=======
-    </div>
-    <button type="submit" class="btn btn-default">Add</button>
->>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
   </form>
 </div>
 

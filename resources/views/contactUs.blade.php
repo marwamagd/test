@@ -31,7 +31,11 @@
 				      		<div id="form-message-success" class="mb-4">
 				            Your message was sent, thank you!
 				      		</div>
+<<<<<<< HEAD
            <form action="{{ route('SendEmail') }}" method="POST" id="contactForm" name="contactForm">
+=======
+<form action="{{ route('SendEmail') }}" method="POST" id="contactForm" name="contactForm">
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
 
 										@csrf
 										<div class="row">

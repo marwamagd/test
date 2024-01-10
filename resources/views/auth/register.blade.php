@@ -60,6 +60,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="row mb-3">
                             <label for="mobile" class="col-md-4 col-form-label text-md-end">{{ __('mobile') }}</label>
 
@@ -73,6 +74,9 @@
                                 @enderror
                             </div>
                         </div>
+=======
+
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

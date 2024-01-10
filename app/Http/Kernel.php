@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+<<<<<<< HEAD
       
             'web' => [
                 // ...
@@ -79,5 +80,7 @@ class Kernel extends HttpKernel
 
     protected $routeMiddleware = [
          'auth.car' => \App\Http\Middleware\CheckCarPermissions::class,
+=======
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
     ];
 }

@@ -16,6 +16,7 @@ public function blog(){
 public function blog1(){     
     return view("blog1");
 }
+<<<<<<< HEAD
 public function mySession(){
    session()->put('test','first laravel session') ;    
     $data = session('test');
@@ -23,5 +24,8 @@ public function mySession(){
 
    return view("session",compact('data'));
 }
+=======
+
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
 
 }

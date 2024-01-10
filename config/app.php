@@ -82,7 +82,10 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
+<<<<<<< HEAD
     
+=======
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
 
     'locale' => 'en',
 
@@ -164,11 +167,14 @@ return [
         /*
          * Application Service Providers...
          */
+<<<<<<< HEAD
          
             // ...
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         
         
+=======
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -189,8 +195,11 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+<<<<<<< HEAD
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
 
+=======
+>>>>>>> fca7a7134065c44a08474e56eb786e69c4eef458
     ])->toArray(),
 
 ];
